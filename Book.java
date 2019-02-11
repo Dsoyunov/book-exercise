@@ -14,7 +14,7 @@ class Book
     public int pages;
     private String refNumber;
     private int borrowed;
-    
+    int borrowed;
     
     
     /**
@@ -56,6 +56,21 @@ class Book
             return refNumber;
          
         }
+    public int getBorrowed()
+	{
+	    return borrowed;
+	}
+    public void setRefNumber(String ref)
+	{
+	   if (ref.length() >=3)
+	{
+	   refNumber = ref;
+        }
+        else
+        {
+            System.out.println("Reference #”);
+        }
+    }
         
     public void printAuthor()
         {
@@ -74,5 +89,15 @@ class Book
             System.out.println("Title:" + title + "Author:" + author + "Pages:" + pages);
          
         }
+    if (refNumber.length() > 0)
+        {
+            System.out.println("Reference number: " + refNumber);
+        }
+        else
+        {
+            System.out.println("ZZZ");
+        }
+        
+        System.out.println("\"" + title + "\" has been borrowed " + borrowed + " times");
     }
-    
+}
